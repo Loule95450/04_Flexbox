@@ -19,20 +19,55 @@ TP à partir d'ici
 
 /* Etape 1 
 basculer les boîtes à la verticale */
+section {
+    display: flex;
+}
 
 /* Etape 2 
 autoriser le retour à la ligne, et placer 4 items par ligne en déterminant leur largeur (2 propriétés possibles).*/
+section{
+    flex-wrap: wrap;
+}
 
+section div{
+    width: 24%;
+}
 /* Etape 3
 appliquer des marges aux boîtes, puis centrer le contenu. Ajouter de nouvelles boîtes et observer le comportement d'affichage. */
+section div{
+    margin: 10px 0 10px 0;
+}
 
+section{
+    justify-content: space-around;
+}
 /* Etape 4
 étendre la boîte 5 à toute la largeur
 */
+section div.center{
+    width: 99%;
+}
 
+section div{
+    display: flex;
+    justify-content: center;
+}
+
+section div span{
+    align-self: center;
+}
 /* Etape 5
 ajouter un breakpoint à 1024px de large en-dessous duquel il n'y a plus que 2 boites par ligne (sauf la 5 qui reste à 100%)
 */
-
+@media (max-width: 992px) {
+    section div{
+        width: 49%;
+    }
+}
 /* Etape 6
 ajouter un autre breakpoint à 600px de large en-dessous duquel toutes les boites sont les une au-dessus des autres */
+@media (max-width: 1024px) and (min-width: 601px){
+    section div{
+        width: 49%;
+    }
+}
